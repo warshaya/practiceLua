@@ -1,9 +1,13 @@
 print( "Hello, world!" )
 
+-- define functions here
+
+--[[
+-- func1() is a function prototype
+-- ]]
 function func1 ()
    print( "func1 was called!" )
 end
-
 
 --[[
 -- printdata( a ) takes a vector and prints its contents in a line
@@ -25,6 +29,9 @@ function generatepermutations( n )
   return {1,2,3,4,5,6,7,8}
 end
 
+
+-- begin scripting here
+
 func1()
 a = generatepermutations( 1 )
 print( a )
@@ -35,3 +42,4 @@ printdata (a)
 
 
 print( "Goodbye, world!" )
+
