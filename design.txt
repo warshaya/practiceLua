@@ -1,0 +1,47 @@
+modify the program, first creating all perturbations, then eliminating invalid ones.  measure the count of 'isplaceok()'.
+
+let {1,2,3,4,5,6,7,8] be the set of all perturbations.
+
+all eight-digit numbers such that the sum of the digits are 36? 
+
+00000000
+00000001
+00000010
+00000011
+00000100
+00000101
+00000110
+00000111
+00001000
+00001001
+00001010
+00001011
+00001100
+00001101
+00001110
+00001111
+00010000
+
+1:
+{ 1 }
+
+2:
+{ 12
+  21 }
+
+3:
+{ 123 213
+  231 132
+  312 321 }
+
+4:
+{ 1234 2134 2314 1324 3124 3214
+  2341 1342 3142 3241 1243 2143
+  3412 3421 1423 2413 2431 1432
+  4123 4213 4231 4132 4312 4321 }
+
+Heap's Algorithm
+
+Function: isplaceok - checks whether position n,c is free from attack (where n, c is a position in solution a) (n is the index aka row, c is the value aka column)
+
+
