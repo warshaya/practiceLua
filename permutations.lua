@@ -4,6 +4,10 @@ function func1 ()
    print( "func1 was called!" )
 end
 
+
+--[[
+-- printdata( a ) takes a vector and prints its contents in a line
+-- ]]
 function printdata( a )
   for i = 1, #a  do
     io.write( a[i], " " )
