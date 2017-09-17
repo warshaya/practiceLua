@@ -11,12 +11,18 @@ function printdata( a )
   io.write( "\n")
 end
 
+--[[
+-- generatepermutations( n ) will generate all permutations of inteters 1 thru N
+-- ]]
 function generatepermutations( n )
+  if ( n == 1 ) then
+    return {1}
+  end
   return {1,2,3,4,5,6,7,8}
 end
 
 func1()
-a = generatepermutations( 8 )
+a = generatepermutations( 1 )
 print( a )
 printdata (a)
 
