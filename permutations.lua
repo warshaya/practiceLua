@@ -38,8 +38,15 @@ print( a )
 printdata (a)
 
 
+first = {1,2} -- append next digit
+test = {}   -- initialize new set
+test[1] = {first[1], first[2]} 
+test[2] = {first[2], first[1]}
 
+
+printdata (test[1])
 
 
 print( "Goodbye, world!" )
+
 
