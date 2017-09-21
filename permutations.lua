@@ -23,10 +23,11 @@ end
 -- printalldata will loop through a metatable
 --]]
 function printalldata( a )
+  local value = a
   print( "all values:" )
-  for i = 1, #a do
+  for i = 1, #value do
     io.write( "\nelement:\n" )
-    printdata( a[i] )
+    printdata( value[i] )
   end
   print( "end listing values" )
 end
@@ -40,9 +41,14 @@ function generatepermutations( n )
   if ( n <= 0 ) then
     return nil
   end
+  local a = {1}
   if( n == 1 ) then
-    return {1}
+    return a
   end
+  appendnext( a )
+  a[1] = {a[1],a[2]}
+  a[2] = shiftvector( a[1] )
+  return a
 end
 
 --[[
@@ -51,7 +57,7 @@ end
 function appendnext( a )
   local length = #a
   a[length+1] = length+1
-  return a
+--  return a
 end
 
 --[[
@@ -74,14 +80,15 @@ function shiftvector( a )
     a[i] = a[i+1]
   end
   a[#a] = holdvalue
+  return a
 end
 
 -- begin scripting here
 
 func1()
-a = generatepermutations( 1 )
-print( a )
-printdata (a)
+_a = generatepermutations( 1 )
+print( _a )
+printdata (_a)
 
 
 
