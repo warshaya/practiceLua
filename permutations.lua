@@ -39,7 +39,8 @@ end
 function generatepermutations( n )
   if ( n <= 0 ) then
     return nil
-  else if( n == 1 ) then
+  end
+  if( n == 1 ) then
     return {1}
   end
 end

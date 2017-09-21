@@ -40,7 +40,12 @@ test.shiftvector_sizeThree_shiftsallForward = function()
   test.equal( a[3], 1 )
 end
 
+-- tests for generatepermutations( n )
 
+test.generatepermutations_zero_returnsnil = function()
+  a = generatpermutations
+  test.equal( a, nil )
+end
 
 
 
