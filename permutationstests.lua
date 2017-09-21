@@ -92,5 +92,10 @@ test.generatepermutations_three_returnsthem = function()
   test.equal( a[6][3], 1 )
 end
 
+test.generatepermutations_four_hasFourFactorialElements = function()
+  local a = generatepermutations( 4 )
+  test.equal( #a, 24 )
+end
+
 
 
