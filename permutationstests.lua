@@ -30,7 +30,15 @@ test.appendnexttoall_sizeTwo_returnsThreeForAll = function()
   test.equal( a[2][3],3 )
 end
 
+-- tests for shiftvector( a )
 
+test.shiftvector_sizeThree_shiftsallForward = function()
+  a = {1,2,3}
+  shiftvector( a ) -- should result in {2,3,1}
+  test.equal( a[1], 2 )
+  test.equal( a[2], 3 )
+  test.equal( a[3], 1 )
+end
 
 
 

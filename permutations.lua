@@ -61,6 +61,17 @@ function appendnexttoall( a )
   end
 end
 
+--[[ given a vector, shiftvector( a ) will shift all elements forward by one index,
+-- and move the first value to the end
+--]]
+function shiftvector( a )
+  local holdvalue = a[1]
+  for i = 1, #a-1 do
+    a[i] = a[i+1]
+  end
+  a[#a] = holdvalue
+end
+
 -- begin scripting here
 
 func1()
