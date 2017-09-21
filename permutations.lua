@@ -1,5 +1,7 @@
 print( "Hello, world!" )
 
+require 'fact'
+
 -- define functions here
 
 --[[
@@ -55,6 +57,25 @@ function generatepermutations( n )
   appendnext( a )
   a = {a,{}}
   a[2] = shiftvector( a[1] )
+  if ( n == 2 ) then
+    return a
+  end
+  for i = 3, n do
+    appendnexttoall( a )
+    local newspaces = fact( i ) - #a
+    local lastendpoint = fact( i-1 )
+    for j = 1, newspaces do --initialize new spaces for all new shifts
+      a[i+j-1] = {}
+    end
+    for k = 1, fact(i-1) do --each k will be a segment from k*fact(i-1) thru
+                            -- (k+1)fact(i-1)
+      local nextspottofill = k * fact(i-1) + 1
+      a[nextspottofill] = shiftvector( a[k] )
+      for l = 1, fact(i-1)-1 do
+        a[nextspottofill+l] = shiftvector( a[nextspottofill+l-1] )
+      end
+    end
+  end
   return a
 end
 
@@ -92,37 +113,6 @@ function shiftvector( a )
 end
 
 -- begin scripting here
-
-func1()
-_a = generatepermutations( 1 )
-print( _a )
-printdata (_a)
-
-
-
-first = {1,2} -- append next digit
-test = {}   -- initialize new set
---[[
-test[1] = {first[1], first[2]} 
-test[2] = {first[2], first[1]}
-
-printalldata( test )
---]]
-sizeOfTest = #test
-print( sizeOfTest )
-nextElement = #test + 1
-print( nextElement)
-
-testVector = {1,2}
-printdata( testVector)
-moveToBack = testVector[1]
-testVector[1] = testVector[2]
-testVector[2] = moveToBack
-printdata( testVector )
-
-
-
-
 
 
 
