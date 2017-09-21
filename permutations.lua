@@ -28,7 +28,7 @@ function printalldata( a )
   local value = a
   print( "all values:" )
   for i = 1, #value do
-    io.write( "\nelement:\n" )
+    io.write( "\nelement $i:\n" )
     printdata( value[i] )
   end
   print( "end listing values" )
@@ -62,16 +62,16 @@ function generatepermutations( n )
   end
   for i = 3, n do
     appendnexttoall( a )
-    local newspaces = fact( i ) - #a
+    local newspaces = fact( i ) - fact( i-1 )
     local lastendpoint = fact( i-1 )
     for j = 1, newspaces do --initialize new spaces for all new shifts
-      a[i+j-1] = {}
+      a[lastendpoint+j] = {}
     end
-    for k = 1, fact(i-1) do --each k will be a segment from k*fact(i-1) thru
+    for k = 1, i-1 do --each k will be a segment from k*fact(i-1) thru
                             -- (k+1)fact(i-1)
       local nextspottofill = k * fact(i-1) + 1
       a[nextspottofill] = shiftvector( a[k] )
-      for l = 1, fact(i-1)-1 do
+      for l = 1, i-2 do
         a[nextspottofill+l] = shiftvector( a[nextspottofill+l-1] )
       end
     end
