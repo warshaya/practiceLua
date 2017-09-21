@@ -97,5 +97,25 @@ test.generatepermutations_four_hasFourFactorialElements = function()
   test.equal( #a, 24 )
 end
 
+test.generatepermutations_five_hasFiveFactorialelements = function()
+  local a = generatepermutations( 5 )
+  test.equal( #a, 120 )
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
