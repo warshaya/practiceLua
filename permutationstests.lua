@@ -53,7 +53,13 @@ test.generatepermutations_one_returnsOne = function()
   test.equal( a[2], nil )
 end
 
-
+test.generatepermutations_two_returnsthem = function()
+  a = generatepermuations( 2 ) -- should result in {{1,2}, {2,1}}
+  test.equal( a[1][1],1 )
+  test.equal( a[1][2],2 )
+  test.equal( a[2][1],2 )
+  test.equal( a[2][2],1 )
+end
 
 
 
