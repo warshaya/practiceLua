@@ -32,6 +32,13 @@ function printalldata( a )
   print( "end listing values" )
 end
 
+--[[
+-- clonetable makes a copy of a table so I can modify it without
+-- changing the original (from lua-users.org/wiki/copytable)
+--]]
+function table.clone( a )
+  return {table.unpack( a )}
+end
 
 --[[
 -- generatepermutations( n ) will generate all permutations of 
@@ -46,7 +53,7 @@ function generatepermutations( n )
     return a
   end
   appendnext( a )
-  a[1] = {a[1],a[2]}
+  a = {a,{}}
   a[2] = shiftvector( a[1] )
   return a
 end
@@ -75,12 +82,13 @@ end
 -- by one index, and move the first value to the end
 --]]
 function shiftvector( a )
-  local holdvalue = a[1]
-  for i = 1, #a-1 do
-    a[i] = a[i+1]
+  local result = table.clone( a )
+  local holdvalue = result[1]
+  for i = 1, #result-1 do
+    result[i] = result[i+1]
   end
-  a[#a] = holdvalue
-  return a
+  result[#result] = holdvalue
+  return result
 end
 
 -- begin scripting here

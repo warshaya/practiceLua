@@ -34,10 +34,19 @@ end
 
 test.shiftvector_sizeThree_shiftsallForward = function()
   local a = {1,2,3}
-  shiftvector( a ) -- should result in {2,3,1}
-  test.equal( a[1], 2 )
-  test.equal( a[2], 3 )
-  test.equal( a[3], 1 )
+  b = shiftvector( a ) -- should result in {2,3,1}
+  test.equal( b[1], a[2] )
+  test.equal( b[2], a[3] )
+  test.equal( b[3], a[1] )
+end
+
+-- tests for clone( table )
+
+test.clonetable_modifyclone_firstisunmodified = function()
+  local a = {1,2,3}
+  local b = table.clone( a )
+  b[1] = 0
+  test.equal( a[1], 1 )
 end
 
 -- tests for generatepermutations( n )
