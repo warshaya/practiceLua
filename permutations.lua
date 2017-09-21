@@ -56,6 +56,9 @@ end
 -- in it
 --]]
 function appendnexttoall( a )
+  for i = 1, #a do
+    appendnext( a[i] )
+  end
 end
 
 -- begin scripting here
