@@ -70,6 +70,27 @@ test.generatepermutations_two_returnsthem = function()
   test.equal( a[2][2],1 )
 end
 
+test.generatepermutations_three_returnsthem = function()
+  local a = generatepermutations( 3 )
+  test.equal( a[1][1], 1 )
+  test.equal( a[1][2], 2 )
+  test.equal( a[1][3], 3 )
+  test.equal( a[2][1], 2 )
+  test.equal( a[2][2], 3 )
+  test.equal( a[2][3], 1 )
+  test.equal( a[3][1], 3 )
+  test.equal( a[3][2], 1 )
+  test.equal( a[3][3], 2 )
+  test.equal( a[4][1], 2 )
+  test.equal( a[4][2], 1 )
+  test.equal(a[4][3], 3)
+  test.equal(a[5][1], 1)
+  test.equal(a[5][2], 3)
+  test.equal(a[5][3], 2)
+  test.equal(a[6][1], 3)
+  test.equal(a[6][2], 2)
+  test.equal(a[6][3], 1)
+end
 
 
 
