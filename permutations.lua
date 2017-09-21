@@ -12,6 +12,14 @@ function func1 ()
 end
 
 --[[
+-- printf() will be a function to emulate printf
+-- (from lua-users.org/wiki/LuaPrintf)
+--]]
+function printf( s, ... )
+  return io.write( s:format( ... ) )
+end
+
+--[[
 -- printdata( a ) takes a vector and prints its contents in a line
 -- ]]
 function printdata( a )
@@ -28,7 +36,7 @@ function printalldata( a )
   local value = a
   print( "all values:" )
   for i = 1, #value do
-    io.write( "\nelement $i:\n" )
+    printf( "\nelement %d:\n", i )
     printdata( value[i] )
   end
   print( "end listing values" )
