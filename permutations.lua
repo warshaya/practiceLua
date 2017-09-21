@@ -33,7 +33,8 @@ end
 
 
 --[[
--- generatepermutations( n ) will generate all permutations of inteters 1 thru N
+-- generatepermutations( n ) will generate all permutations of 
+-- inteters 1 thru N
 -- ]]
 function generatepermutations( n )
   if ( n == 1 ) then
@@ -52,8 +53,8 @@ function appendnext( a )
 end
 
 --[[
--- given a whole set of vectors, appendnexttoall( a ) will appendnext to each item
--- in it
+-- given a whole set of vectors, appendnexttoall( a ) will appendnext to
+-- each item in it
 --]]
 function appendnexttoall( a )
   for i = 1, #a do
@@ -61,8 +62,9 @@ function appendnexttoall( a )
   end
 end
 
---[[ given a vector, shiftvector( a ) will shift all elements forward by one index,
--- and move the first value to the end
+--[[ 
+-- given a vector, shiftvector( a ) will shift all elements forward 
+-- by one index, and move the first value to the end
 --]]
 function shiftvector( a )
   local holdvalue = a[1]
