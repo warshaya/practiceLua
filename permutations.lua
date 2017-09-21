@@ -20,6 +20,19 @@ function printdata( a )
 end
 
 --[[
+-- printalldata will loop through a metatable
+--]]
+function printalldata( a )
+  print( "all values:" )
+  for i = 1, #a do
+    io.write( "\nelement:\n" )
+    printdata( a[i] )
+  end
+  print( "end listing values" )
+end
+
+
+--[[
 -- generatepermutations( n ) will generate all permutations of inteters 1 thru N
 -- ]]
 function generatepermutations( n )
@@ -38,15 +51,47 @@ print( a )
 printdata (a)
 
 
+
 first = {1,2} -- append next digit
 test = {}   -- initialize new set
+--[[
 test[1] = {first[1], first[2]} 
 test[2] = {first[2], first[1]}
 
+printalldata( test )
+--]]
+sizeOfTest = #test
+print( sizeOfTest )
+nextElement = #test + 1
+print( nextElement)
 
-printdata (test[1])
+testVector = {1,2}
+printdata( testVector)
+moveToBack = testVector[1]
+testVector[1] = testVector[2]
+testVector[2] = moveToBack
+printdata( testVector )
+
+
+
+
+
+
+
+
 
 
 print( "Goodbye, world!" )
+
+
+
+
+
+
+
+
+
+
+
 
 
