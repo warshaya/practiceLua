@@ -42,6 +42,21 @@ function generatepermutations( n )
   return {1,2,3,4,5,6,7,8}
 end
 
+--[[
+-- appendnext( a ) will take a vector and add the next number to it
+--]]
+function appendnext( a )
+  local length = #a
+  a[length+1] = length+1
+  return a
+end
+
+--[[
+-- given a whole set of vectors, appendnexttoall( a ) will appendnext to each item
+-- in it
+--]]
+function appendnexttoall( a )
+end
 
 -- begin scripting here
 
