@@ -47,6 +47,12 @@ test.generatepermutations_zero_returnsnil = function()
   test.equal( a, nil )
 end
 
+test.generatepermutations_one_returnsOne = function()
+  a = generatepermutations( 1 )
+  test.equal( a[1], 1 )
+  test.equal( a[2], nil )
+end
+
 
 
 
