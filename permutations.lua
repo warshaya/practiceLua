@@ -37,10 +37,11 @@ end
 -- inteters 1 thru N
 -- ]]
 function generatepermutations( n )
-  if ( n == 1 ) then
+  if ( n <= 0 ) then
+    return nil
+  else if( n == 1 ) then
     return {1}
   end
-  return {1,2,3,4,5,6,7,8}
 end
 
 --[[
