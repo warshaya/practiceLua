@@ -73,14 +73,16 @@ function generatepermutations( n )
     local newspaces = fact( i ) - fact( i-1 )
     local lastendpoint = fact( i-1 )
     for j = 1, newspaces do --initialize new spaces for all new shifts
-      a[lastendpoint+j] = {}
+      a[lastendpoint + j] = {}
     end
-    for k = 1, i-1 do --each k will be a segment from k*fact(i-1) thru
+    local nextspottofill = lastendpoint + 1
+    for k = 1, fact(i-1) do --each k will be a segment from k*fact(i-1) thru
                             -- (k+1)fact(i-1)
-      local nextspottofill = k * fact(i-1) + 1
       a[nextspottofill] = shiftvector( a[k] )
+      nextspottofill = nextspottofill + 1
       for l = 1, i-2 do
-        a[nextspottofill+l] = shiftvector( a[nextspottofill+l-1] )
+        a[nextspottofill] = shiftvector( a[nextspottofill-1] )
+        nextspottofill = nextspottofill + 1
       end
     end
   end
