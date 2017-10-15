@@ -1,0 +1,39 @@
+we need a function such that 
+
+(0,1) maps to (-inf, inf).
+
+
+the normal probability distribution is
+
+f(x) = (1/sqrt(2*pi))*e^-(x^2/2) 
+
+y =  (1/sqrt(2*pi))*e^-(x^2/2)
+
+
+this maps (-inf, inf) to (0, 1/sqrt(2*pi)]
+
+
+y = e^-(x2/2)
+
+x = e^(-y^2/2)
+
+ln(x) = -(y^2/2)
+
+-ln(x) = y^2/2
+
+-2*ln(x) = y^2
+
+sqrt( -2*ln(x) ) = y
+
+
+
+
+====== error function ======
+
+
+
+error function - is the amount of error.???
+
+anyhow, I still do not have a normal distribution.  why not?
+
+what if I pull from -1 to 1 instead of faking it by 0 to 1?
